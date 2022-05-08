@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    background-color: rgb(7, 1, 33);
+}
+
+body *{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    color: whitesmoke;
+}
+
+body .date{
+    width: 20%;
+    text-align: left;
+}
+
+body .time{
+    width: 20%;
+    text-align: left;
+}
+
+
+#canvas {
+    position: absolute;
+    top: 0; 
+    left: 0;
+}
