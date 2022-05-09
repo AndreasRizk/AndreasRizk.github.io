@@ -8,8 +8,11 @@ function displayDateTime(){
     let date = new Date();
     let weekDay = days[date.getDay()];
     let month = months[date.getMonth()];
+    let hr = date.getHours().toString().padStart(2,'0');
+    let min = date.getMinutes().toString().padStart(2,'0');
+    let sec = date.getSeconds().toString().padStart(2,'0');
     nodeDate.innerHTML = `<h1>${weekDay} ${month} ${date.getDate()}, ${date.getFullYear()} </h1>`;
-    nodeTime.innerHTML = `<h2>${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}</h2>`;
+    nodeTime.innerHTML = `<h2>${hr}:${min}:${sec}</h2>`;
 }
 
 setInterval(displayDateTime, 1000)

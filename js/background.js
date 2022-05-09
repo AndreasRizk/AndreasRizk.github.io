@@ -1,12 +1,20 @@
 let mouse = {
     x: null,
-    y: null
+    y: null,
+    click: null
 }
 
 window.addEventListener('mousemove', function(event){
     mouse.x = event.x;
     mouse.y = event.y;
 })
+
+document.body.onmousedown = function() { 
+    mouse.click=true;
+}
+  document.body.onmouseup = function() {
+    mouse.click=false;
+}
 
 class Particle{
     constructor(){
@@ -45,10 +53,19 @@ class Particle{
         let fDX = dx / dist;
         let fDY = dy / dist;
 
+        if (mouse.click){
+            fDX*=-1;
+            fDY*=-1;
+        }
         if (dist < 300){
             this.x += fDX;
             this.y += fDY;
         };
+        if (this.x < 0)this.x=0;
+        else if (this.x > window.innerWidth)this.x=window.innerWidth;
+
+        if (this.y < 0)this.y=0;
+        else if (this.y > window.innerWidth)this.y=window.innerHeight;
     }
 }
 
@@ -63,7 +80,7 @@ function particleCreate(){
     particles.push(new Particle());
 }
 
-for (let i = 0; i < 1000; i++)particles.push(new Particle());
+for (let i = 0; i < 100; i++)particles.push(new Particle());
 
 function animate(){
     //setInterval(particleCreate(), 10000);

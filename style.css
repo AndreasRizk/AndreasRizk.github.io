@@ -17,12 +17,15 @@ body *{
 }
 
 body .date{
-    width: 20%;
+    width: 1000px;
+    top: 20px;
+    right: 20px;
     text-align: left;
 }
 
 body .time{
-    width: 20%;
+    top: 80px;
+    right: 20px;
     text-align: left;
 }
 
